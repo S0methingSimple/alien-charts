@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app.name }}
+  name: {{ .Values.deployment.name }}
   namespace: default
 spec:
-  replicas: 1
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.app.selectorLabel }}
+      app: {{ .Values.deployment.selectorLabel }}
   template:
     metadata:
       labels:
-        app: {{ .Values.app.labels }}
+        app: {{ .Values.deployment.labels }}
     spec:
       containers:
-      - name: {{ .Values.app.name }}
-        image: registry.gitlab.com/cs302-2023/g2-team3/services/users/main:ed2e5572cc7a8d9c84e8be4561df2319a55bd681
+      - name: {{ .Values.deployment.name }}
+        image: {{ .Values.deployment.image }}
         ports:
-        - containerPort: {{ .Values.app.port }}
+        - containerPort: {{ .Values.deployment.port }}
         env:
         - name: POSTGRES_CONN
           valueFrom:

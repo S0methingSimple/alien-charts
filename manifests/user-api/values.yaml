@@ -1,8 +1,14 @@
-app:
+# Default values for anime-api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
   name: user-api
+  replicas: 1
   port: 8080
   labels: user-api
   selectorLabel: user-api
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/users/main:ed2e5572cc7a8d9c84e8be4561df2319a55bd681
 
 service:
   name: user
