@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: watchlist-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: manifests/watchlist-api
+    repoURL: https://gitlab.com/cs302-2023/g2-team3/charts/charts.git
+    targetRevision: HEAD
+    helm:
+      releaseName: watchlist-api
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
