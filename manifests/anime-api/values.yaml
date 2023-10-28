@@ -1,0 +1,21 @@
+# Default values for anime-api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  name: anime-api
+  replicas: 1
+  port: 8080
+  labels: anime-api
+  selectorLabel: anime-api
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/anime/main:25b05f87c1d6a6bd289c1d7c4818b7e5b9d2f70f
+
+service:
+  name: anime
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  name: anime-ingress
+  route: /anime
