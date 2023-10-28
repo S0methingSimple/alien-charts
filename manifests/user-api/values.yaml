@@ -1,0 +1,15 @@
+app:
+  name: user-api
+  port: 8080
+  labels: user-api
+  selectorLabel: user-api
+
+service:
+  name: user
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  name: user-ingress
+  route: /user
