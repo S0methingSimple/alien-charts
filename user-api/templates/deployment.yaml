@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-api
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-api
+  template:
+    metadata:
+      labels:
+        app: user-api
+    spec:
+      containers:
+      - name: user-api
+        image: registry.gitlab.com/cs302-2023/g2-team3/services/users/main:ed2e5572cc7a8d9c84e8be4561df2319a55bd681
+        ports:
+        - containerPort: 8080
+        env:
+        - name: POSTGRES_CONN
+          valueFrom:
+            secretKeyRef:
+              name: postgres-cred
+              key: connection-string
