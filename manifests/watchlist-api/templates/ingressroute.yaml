@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Values.ingress.name }}
+  namespace: default
+spec:
+  entryPoints:
+  - web
+  - websecure
+  routes:
+  - kind: Rule
+    match: PathPrefix(`{{ .Values.ingress.route }}`)
+    services:
+    - kind: Service
+      name: {{ .Values.service.name }}
+      port: {{ .Values.service.port }}

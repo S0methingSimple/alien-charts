@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: default
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.labels }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        image: {{ .Values.deployment.image }}
+        ports:
+        - containerPort: {{ .Values.deployment.port }}
+        env:
+        - name: POSTGRES_CONN
+          valueFrom:
+            secretKeyRef:
+              name: postgres-cred
+              key: connection-string
+        - name: AMQP_URL
+          valueFrom:
+            secretKeyRef:
+              name: rabbitmq-cred
+              key: amqp-url
