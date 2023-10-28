@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    path: user-api
+    path: app-manifests/user-api
     repoURL: https://gitlab.com/cs302-2023/g2-team3/charts/charts.git
     targetRevision: HEAD
     helm:
