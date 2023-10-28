@@ -8,7 +8,7 @@ deployment:
   port: 8080
   labels: watchlist-api
   selectorLabel: watchlist-api
-  image: registry.gitlab.com/cs302-2023/g2-team3/services/watchlist/main:f6462914fffa28726793485363c151f7696ac3ae
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/watchlist/main:1c67e065a66546be2029666cfd5356dd0a9ab466
 
 service:
   name: watchlist
