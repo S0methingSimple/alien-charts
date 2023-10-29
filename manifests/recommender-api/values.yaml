@@ -1,0 +1,17 @@
+# Default values for anime-api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  name: recommender-api
+  replicas: 1
+  port: 8080
+  labels: recommender-api
+  selectorLabel: recommender-api
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/recommender/main:274cfd17c25332aa7e62ab4336ced9c66667c585
+
+service:
+  name: recommender
+  type: ClusterIP
+  port: 80
+  targetPort: 8080

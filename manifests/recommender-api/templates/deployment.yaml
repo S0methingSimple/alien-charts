@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: default
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.labels }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        image: {{ .Values.deployment.image }}
+        ports:
+        - containerPort: {{ .Values.deployment.port }}
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.deployment.port }}
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        env:
+        - name: DB_CONN
+          valueFrom:
+            secretKeyRef:
+              name: postgres-cred
+              key: connection-string
