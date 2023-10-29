@@ -24,3 +24,9 @@ spec:
             secretKeyRef:
               name: postgres-cred
               key: connection-string
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.deployment.port }}
+          initialDelaySeconds: 5
+          periodSeconds: 5
