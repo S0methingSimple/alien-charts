@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.cronjob.name }}
+spec:
+  schedule: {{ .Values.cronjob.schedule }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Values.cronjob.name }}
+              image: {{ .Values.cronjob.image }}
+            env:
+            - name: POSTGRES_CONN
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-cred
+                  key: connection-string
+            - name: AMQP_URL
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cred
+                  key: amqp-url
+          restartPolicy: OnFailure
+          
