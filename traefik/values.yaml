@@ -588,8 +588,8 @@ ports:
     port: 8000
     # hostPort: 8000
     # containerPort: 8000
-    # expose: true
-    # exposedPort: 80
+    expose: true
+    exposedPort: 80
     ## -- Different target traefik port on the cluster, useful for IP type LB
     # targetPort: 80
     # The port protocol (TCP/UDP)
@@ -705,10 +705,10 @@ tlsOptions: {}
 # -- TLS Store are created as TLSStore CRDs. This is useful if you want to set a default certificate
 # https://doc.traefik.io/traefik/https/tls/#default-certificate
 # Example:
-# tlsStore:
-#   default:
-#     defaultCertificate:
-#       secretName: tls-cert
+tlsStore:
+  default:
+    defaultCertificate:
+      secretName: traefik-origin-tls
 tlsStore: {}
 
 service:
