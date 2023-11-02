@@ -11,8 +11,8 @@ spec:
           containers:
             - name: recommender-engine
               image: registry.gitlab.com/cs302-2023/g2-team3/services/cron/main:4957c152ba3ec8cfe667f16e70cc2428d570c9af
-            envFrom:
-              - secretRef:
-                  name: recommender-env
+          envFrom:
+            - secretRef:
+                name: recommender-env
           restartPolicy: OnFailure
           
