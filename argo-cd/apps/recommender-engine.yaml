@@ -9,12 +9,6 @@ spec:
     path: manifests/recommender-engine
     repoURL: https://gitlab.com/cs302-2023/g2-team3/charts/charts.git
     targetRevision: HEAD
-    helm:
-      releaseName: recommender-engine
   destination:
     namespace: default
     server: https://kubernetes.default.svc
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
