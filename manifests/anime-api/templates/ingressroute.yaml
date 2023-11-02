@@ -10,6 +10,9 @@ spec:
   routes:
   - kind: Rule
     match: PathPrefix(`{{ .Values.ingress.route }}`)
+    middlewares:
+    - name: rate-limit-api
+    - name: redirect-https
     services:
     - kind: Service
       name: {{ .Values.service.name }}
