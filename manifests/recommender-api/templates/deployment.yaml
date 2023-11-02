@@ -22,5 +22,5 @@ spec:
           - secretRef:
               name: recommender-env
         env:
-        - name: ANIME_HOST
+        - name: anime_host
           value: "http://anime.default.svc.cluster.local:80"
