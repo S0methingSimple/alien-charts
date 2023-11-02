@@ -15,3 +15,7 @@ service:
   type: ClusterIP
   port: 80
   targetPort: 5001
+
+ingress:
+  name: recommender-ingress
+  route: /recommender
