@@ -30,3 +30,5 @@ spec:
             secretKeyRef:
               name: postgres-cred
               key: connection-string
+        - name: RECOMMENDER_HOST
+          value: recommender.default.svc.cluster.local

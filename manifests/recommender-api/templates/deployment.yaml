@@ -24,9 +24,9 @@ spec:
             port: {{ .Values.deployment.port }}
           initialDelaySeconds: 10
           periodSeconds: 10
+        envFrom:
+          - secretRef:
+              name: recommender-env
         env:
-        - name: DB_CONN
-          valueFrom:
-            secretKeyRef:
-              name: postgres-cred
-              key: connection-string
+        - name: ANIME_HOST
+          value: anime.default.svc.cluster.local

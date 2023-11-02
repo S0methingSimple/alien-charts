@@ -4,5 +4,5 @@
 
 cronjob:
   name: recommender-engine
-  image: registry.gitlab.com/cs302-2023/g2-team3/services/cron/main:1029d65609a1ba9b723b1878bb559e81f9c099ee
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/cron/main:4957c152ba3ec8cfe667f16e70cc2428d570c9af
   schedule: "* * * * *"
