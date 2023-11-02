@@ -18,4 +18,4 @@ service:
 
 ingress:
   name: recommender-ingress
-  route: /recommender
+  route: /recommendations
