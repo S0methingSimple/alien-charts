@@ -24,6 +24,12 @@ spec:
             port: {{ .Values.deployment.port }}
           initialDelaySeconds: 10
           periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.deployment.port }}
+          initialDelaySeconds: 10
+          periodSeconds: 10
         env:
         - name: POSTGRES_CONN
           valueFrom:
@@ -31,4 +37,4 @@ spec:
               name: postgres-cred
               key: connection-string
         - name: RECOMMENDER_HOST
-          value: recommender.default.svc.cluster.local
+          value: "recommender.default.svc.cluster.local:80"
