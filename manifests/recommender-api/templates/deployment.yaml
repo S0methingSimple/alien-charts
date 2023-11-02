@@ -24,9 +24,9 @@ spec:
         #     port: {{ .Values.deployment.port }}
         #   initialDelaySeconds: 10
         #   periodSeconds: 10
-        # envFrom:
-        #   - secretRef:
-        #       name: recommender-env
+        envFrom:
+          - secretRef:
+              name: recommender-env
         env:
         - name: ANIME_HOST
           value: anime.default.svc.cluster.local
