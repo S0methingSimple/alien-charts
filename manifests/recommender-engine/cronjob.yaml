@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ .Values.cronjob.name }}
+  name: recommender-engine
 spec:
-  schedule: {{ .Values.cronjob.schedule }}
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-            - name: {{ .Values.cronjob.name }}
-              image: {{ .Values.cronjob.image }}
+            - name: recommender-engine
+              image: registry.gitlab.com/cs302-2023/g2-team3/services/cron/main:4957c152ba3ec8cfe667f16e70cc2428d570c9af
             envFrom:
               - secretRef:
                   name: recommender-env
