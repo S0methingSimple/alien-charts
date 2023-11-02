@@ -5,7 +5,7 @@
 deployment:
   name: recommender-api
   replicas: 1
-  port: 8080
+  port: 5001
   labels: recommender-api
   selectorLabel: recommender-api
   image: registry.gitlab.com/cs302-2023/g2-team3/services/recommender/main:95b4e91d42d0085158a1029e73fa63f67922f605
@@ -14,4 +14,4 @@ service:
   name: recommender
   type: ClusterIP
   port: 80
-  targetPort: 8080
+  targetPort: 5001

@@ -37,4 +37,4 @@ spec:
               name: postgres-cred
               key: connection-string
         - name: RECOMMENDER_HOST
-          value: "http://recommender.default.svc.cluster.local:5001"
+          value: "http://recommender.default.svc.cluster.local:80"
