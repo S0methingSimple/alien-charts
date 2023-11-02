@@ -17,4 +17,5 @@ spec:
               envFrom:
                 - secretRef:
                     name: recommender-env
+          restartPolicy: Never
           
