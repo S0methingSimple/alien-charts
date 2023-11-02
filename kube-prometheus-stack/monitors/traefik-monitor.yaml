@@ -7,7 +7,6 @@ metadata:
 spec:
   endpoints:
   - path: /metrics
-    port: "9100"
   selector:
     matchLabels:
-      app: traefik-888b685cd
+      app: traefik
