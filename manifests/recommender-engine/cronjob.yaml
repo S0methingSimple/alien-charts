@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: recommender-engine
 spec:
-  schedule: "0 */12 * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
