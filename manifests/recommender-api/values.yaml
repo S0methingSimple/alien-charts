@@ -8,7 +8,7 @@ deployment:
   port: 5001
   labels: recommender-api
   selectorLabel: recommender-api
-  image: registry.gitlab.com/cs302-2023/g2-team3/services/recommender/main:8f4d3bf74172baf5fa7ede4f62acb2c80daa54ad
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/recommender/main:3b2fa1aa185421f0030d0e1200a8bbaa9243665b
 
 service:
   name: recommender
