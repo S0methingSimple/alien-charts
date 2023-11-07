@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: recommender-engine
-              image: registry.gitlab.com/cs302-2023/g2-team3/services/cron/main:92879551d41deb33bbab5ff16ea937a0d8aed2cc
+              image: registry.gitlab.com/cs302-2023/g2-team3/services/cron/main:03e6ae644eb94245b1c03085978019e790ba5eee
               envFrom:
                 - secretRef:
                     name: recommender-env
