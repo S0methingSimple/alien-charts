@@ -18,4 +18,4 @@ service:
 
 ingress:
   name: user-ingress
-  route: /user
+  route: /api/v1/user

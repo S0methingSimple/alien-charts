@@ -18,4 +18,4 @@ service:
 
 ingress:
   name: anime-ingress
-  route: /anime
+  route: /api/v1/anime

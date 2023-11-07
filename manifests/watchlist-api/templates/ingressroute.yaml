@@ -12,6 +12,7 @@ spec:
     match: PathPrefix(`{{ .Values.ingress.route }}`)
     middlewares:
     - name: redirect-https
+    - name: strip-v1-prefix
     services:
     - kind: Service
       name: {{ .Values.service.name }}

@@ -13,6 +13,7 @@ spec:
     middlewares:
     - name: rate-limit-api
     - name: redirect-https
+    - name: strip-v1-prefix
     services:
     - kind: Service
       name: {{ .Values.service.name }}
