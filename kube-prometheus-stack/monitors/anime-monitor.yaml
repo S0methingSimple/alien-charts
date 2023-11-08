@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: user-monitor
+  name: anime-monitor
   labels:
     release: prometheus
 spec:
@@ -10,4 +10,4 @@ spec:
     port: web
   selector:
     matchLabels:
-      app: user
+      app: anime
