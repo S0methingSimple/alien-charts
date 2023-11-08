@@ -8,7 +8,7 @@ deployment:
   port: 8080
   labels: anime-api
   selectorLabel: anime-api
-  image: registry.gitlab.com/cs302-2023/g2-team3/services/anime/main:b3399957775ea217a191e2d0f02f0bd8907347e8
+  image: registry.gitlab.com/cs302-2023/g2-team3/services/anime/main:3a049ac42c2a7d18f0a3088babe798f8672fefcd
 
 service:
   name: anime
